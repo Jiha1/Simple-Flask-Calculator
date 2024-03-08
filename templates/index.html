@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Basic Calculator</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: 'Arimo', sans-serif;
+    }
+    .login {
+      background-color: #fff;
+      padding: 20px;
+      width: 300px;
+      margin: 100px auto;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .login input[type="text"] {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    .login input[type="text"]:focus {
+      border-color: #57b846;
+    }
+    .login button {
+      background-color: #57b846;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .login button:hover {
+      background-color: #4CAF50;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Basic Calculator</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+      <input type="text" name="a" placeholder="Enter the first number" required="required" />
+      <input type="text" name="b" placeholder="Enter the second number" required="required" />
+      <input type="text" name="operation" placeholder="+, -, /, x" required="required" />
+      <button type="submit">Calculate</button>
+    </form>
+    <div class="result">
+      {{ prediction_text }}
+    </div>
+  </div>
+</body>
+</html>
