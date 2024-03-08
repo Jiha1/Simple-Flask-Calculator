@@ -1,2 +1,15 @@
 # Simple-Flask-Calculator
 a user-friendly interface with input fields for numbers and operation selection that can handle basic operations.
+# Functionality
+1. Addition
+2. Subtraction
+3. Multiplication
+4. division
+# Usage steps
+1. Run the following line: python app.py
+2. Go to the web application at http://127.0.0.1:5000/
+3. Insert the numbers and the operations to perform
+# Requirements
+1. Python 3.0
+2. Flask
+   
